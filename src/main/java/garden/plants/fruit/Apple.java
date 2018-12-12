@@ -6,10 +6,6 @@ public class Apple extends AbstractFruit {
         super(price);
     }
 
-    public static String getCategory() {
-        return "Sweet fruit";
-    }
-
     @Override
     public String getColor() {
         return "unknown";
@@ -17,6 +13,6 @@ public class Apple extends AbstractFruit {
 
     @Override
     public Double getPrice() {
-        return (double) super.price - (0.2 * (double) super.price);
+        return super.price - (0.2 * super.price);
     }
 }
