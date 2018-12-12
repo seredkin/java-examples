@@ -30,6 +30,7 @@ public class FruitUnitTest {
         System.out.println("Lemon: "  + new Lemon(4.5));
     }
 
+    //TODO make this work
     @Test
     public void testEquals() {
         Apple apple1 = new Apple(1.0);
@@ -38,6 +39,7 @@ public class FruitUnitTest {
         assertTrue(apple1.equals(apple2));
     }
 
+    //TODO make this work
     @Test public void testHashCode(){
         Set<Plant> plants = new HashSet<>();
         plants.add(new Lemon(2.0));
