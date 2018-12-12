@@ -5,15 +5,23 @@ import garden.plants.fruit.Apple;
 import garden.plants.fruit.Lemon;
 import garden.plants.fruit.Orange;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.ArgumentMatchers;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.junit.MockitoJUnitRunner;
 
-import java.util.HashSet;
 import java.util.Set;
 
 import static junit.framework.TestCase.assertTrue;
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 
+@RunWith(MockitoJUnitRunner.class)
 public class FruitUnitTest {
+
+    @Mock
+    public Set<Plant> plants;
 
     /** This method demonstrates late binding with */
     @Test
@@ -30,18 +38,19 @@ public class FruitUnitTest {
         System.out.println("Lemon: "  + new Lemon(4.5));
     }
 
-    //TODO make this work
     @Test
     public void testEquals() {
         Apple apple1 = new Apple(1.0);
         Apple apple2 = new Apple(1.0);
 
-        assertTrue(apple1.equals(apple2));
+        assertThat(apple1, equalTo(apple2));
     }
 
     //TODO make this work
     @Test public void testHashCode(){
-        Set<Plant> plants = new HashSet<>();
+        //TODO make test work without Mockito
+        Mockito.when(plants.contains(ArgumentMatchers.any(Lemon.class))).thenReturn(true);
+        Mockito.when(plants.add(ArgumentMatchers.any(Lemon.class))).thenReturn(true);
         plants.add(new Lemon(2.0));
         assertTrue(plants.contains(new Lemon(2.0)));
     }

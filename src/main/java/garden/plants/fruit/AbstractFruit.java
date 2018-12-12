@@ -2,8 +2,6 @@ package garden.plants.fruit;
 
 import garden.plants.Plant;
 
-import java.util.Objects;
-
 //TODO explain why uncommenting 'extends Object' this makes no sense:
 public abstract class AbstractFruit  /*extends Object*/ implements Plant {
 
@@ -42,8 +40,4 @@ public abstract class AbstractFruit  /*extends Object*/ implements Plant {
         }
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(getPrice(), getName(), getColor());
-    }
 }
