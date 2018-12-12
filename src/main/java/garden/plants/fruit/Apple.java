@@ -1,8 +1,8 @@
-package garden;
+package garden.plants.fruit;
 
-public class Apple extends Fruit {
+public class Apple extends AbstractFruit {
 
-    protected Apple(Number price) {
+    public Apple(Double price) {
         super(price);
     }
 
@@ -16,7 +16,7 @@ public class Apple extends Fruit {
     }
 
     @Override
-    public Number getPrice() {
+    public Double getPrice() {
         return (double) super.price - (0.2 * (double) super.price);
     }
 }

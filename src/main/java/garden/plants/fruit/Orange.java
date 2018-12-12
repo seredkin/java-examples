@@ -1,7 +1,7 @@
-package garden;
+package garden.plants.fruit;
 
 public class Orange extends Citrus {
-    protected Orange(Number price) {
+    public Orange(Double price) {
         super(price);
     }
 
