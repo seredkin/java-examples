@@ -17,9 +17,9 @@ public class FruitUnitTest {
         Orange orange = new Orange(1.5);
         System.out.println("Orange: "  + orange);
         //TODO Explain why returned String starts with 'Orange'
-        assertThat(orange.toString(), startsWith("Orange"));
-        assertThat(orange.toString(), endsWith(orange.getPrice().toString()));
+        assertThat(orange.toString(), startsWith(orange.getName()));
         assertThat(orange.toString(), containsString(orange.getColor()));
+        assertThat(orange.toString(), endsWith(orange.getPrice().toString()));
 
         System.out.println("Apple: "  + new Apple(2.5));
         System.out.println("Lemon: "  + new Lemon(4.5));
