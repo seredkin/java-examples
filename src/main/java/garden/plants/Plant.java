@@ -1,7 +1,11 @@
 package garden.plants;
 
-/* Common interface for all kinds of vegetation */
+/** Common interface for all kinds of vegetation */
 public interface Plant {
-    /* Returns specific name of the type */
+    Double getPrice();
+
+    String getColor();
+
+    /** Returns specific name of the type */
     String getName();
 }

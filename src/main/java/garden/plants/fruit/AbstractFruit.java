@@ -13,11 +13,10 @@ public abstract class AbstractFruit  /*extends Object*/ implements Plant {
         this.price = price;
     }
 
+    @Override
     public Double getPrice() {
         return price;
     }
-
-    public abstract String getColor();
 
     @Override
     public String getName() {
@@ -38,12 +37,13 @@ public abstract class AbstractFruit  /*extends Object*/ implements Plant {
         } else {
             AbstractFruit that = (AbstractFruit) o;
             return getPrice().equals(that.getPrice()) &&
-                    getName().equals(that.getName());
+                    getName().equals(that.getName()) &&
+                    getColor().equals(that.getColor());
         }
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getPrice(), getName());
+        return Objects.hash(getPrice(), getName(), getColor());
     }
 }

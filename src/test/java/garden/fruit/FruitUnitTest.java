@@ -1,4 +1,4 @@
-package garden;
+package garden.fruit;
 
 import garden.plants.Plant;
 import garden.plants.fruit.Apple;
